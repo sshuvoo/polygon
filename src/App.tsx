@@ -88,7 +88,7 @@ export default function App() {
   }
 
   return (
-    <main>
+    <main className="relative">
       <svg onMouseDown={onMouseDown} className="w-full h-screen">
         {polygons.map((polygon) => (
           <SinglePolygon
@@ -98,6 +98,11 @@ export default function App() {
           />
         ))}
       </svg>
+      {polygons.length === 0 && (
+        <h1 className="absolute top-1/2 font-medium uppercase -translate-y-1/2 left-1/2 -translate-x-1/2 xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl">
+          Click anywhere and move the pointer
+        </h1>
+      )}
     </main>
   )
 }
